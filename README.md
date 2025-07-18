@@ -399,8 +399,4 @@ For detailed security guidelines, see [SECURITY.md](SECURITY.md).
 
 ## License
 
-This project is proprietary software.
-
-## Support
-
-For support, contact the development team or create an issue in the repository. 
+MIT License. [LICENSE](LICENSE)
