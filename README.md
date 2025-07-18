@@ -2,6 +2,8 @@
 
 A multi-channel e-commerce integration platform built with Laravel.
 
+> 🇧🇷 **Leia em Português**: [README.pt-BR.md](README.pt-BR.md)
+
 ## Features
 
 - Multi-tenant architecture
