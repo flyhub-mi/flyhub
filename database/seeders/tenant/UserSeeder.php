@@ -9,13 +9,22 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
-        $user = \App\Models\User::create([
-            'name' => 'Jean Carlos Farias',
-            'email' => 'contato@jeancf.com.br',
+        // Create admin user
+        $admin = \App\Models\User::create([
+            'name' => 'Admin User',
+            'email' => 'admin@demo.com',
             'email_verified_at' => Carbon::now(),
-            'password' => bcrypt('x123456x')
+            'password' => bcrypt('password123')
         ]);
+        $admin->assignRole('admin');
 
-        $user->assignRole('admin');
+        // Create regular user
+        $user = \App\Models\User::create([
+            'name' => 'Demo User',
+            'email' => 'user@demo.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => bcrypt('password123')
+        ]);
+        $user->assignRole('user');
     }
 }

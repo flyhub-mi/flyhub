@@ -3,6 +3,7 @@
 A multi-channel e-commerce integration platform built with Laravel.
 
 > 🇧🇷 **Leia em Português**: [README.pt-BR.md](README.pt-BR.md)
+> **📸 Screenshots**: [SCREENS.md](SCREENS.md)
 
 ## Features
 
@@ -19,6 +20,13 @@ A multi-channel e-commerce integration platform built with Laravel.
 - Order management
 - Inventory tracking
 - API-first design
+
+## Documentation
+
+- **📸 Screenshots**: [SCREENS.md](SCREENS.md) - Visual overview of the application interface
+- **🔒 Security**: [SECURITY.md](SECURITY.md) - Security guidelines and best practices
+- **🚀 Deployment**: [DEPLOYMENT.md](DEPLOYMENT.md) - Deployment instructions
+- **🇧🇷 Portuguese**: [README.pt-BR.md](README.pt-BR.md) - Portuguese documentation
 
 ## Quick Start
 

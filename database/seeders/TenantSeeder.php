@@ -32,6 +32,7 @@ class TenantSeeder extends Seeder
             'state' => 'SP',
             'city' => 'São Paulo',
             'postcode' => '01234-567',
+            'phone' => '(31) 7777-6666',
             'created_at' => $now,
             'updated_at' => $now
         ]);

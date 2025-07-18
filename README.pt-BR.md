@@ -2,6 +2,9 @@
 
 Uma plataforma de integração multi-canal de e-commerce construída com Laravel.
 
+> 🇧🇷 **Leia em Português**: [README.pt-BR.md](README.pt-BR.md)
+> **📸 Screenshots**: [SCREENS.md](SCREENS.md)
+
 ## Funcionalidades
 
 - Arquitetura multi-tenant
@@ -17,6 +20,13 @@ Uma plataforma de integração multi-canal de e-commerce construída com Laravel
 - Gerenciamento de pedidos
 - Controle de estoque
 - Design API-first
+
+## Documentação
+
+- **📸 Screenshots**: [SCREENS.md](SCREENS.md) - Visão geral visual da interface da aplicação
+- **🔒 Segurança**: [SECURITY.md](SECURITY.md) - Diretrizes de segurança e melhores práticas
+- **🚀 Deploy**: [DEPLOYMENT.md](DEPLOYMENT.md) - Instruções de deploy
+- **🇺🇸 English**: [README.md](README.md) - Documentação em inglês
 
 ## Início Rápido
 

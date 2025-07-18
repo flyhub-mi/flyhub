@@ -62,7 +62,7 @@ class RoleController extends BaseController
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource.e
      *
      * @param int $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
