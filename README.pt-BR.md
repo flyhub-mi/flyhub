@@ -395,10 +395,6 @@ Para diretrizes detalhadas de segurança, veja [SECURITY.md](SECURITY.md).
 - Siga as melhores práticas de segurança do Laravel
 - Teste suas alterações thoroughly
 
-## Licença
+## License
 
-Este projeto é software proprietário.
-
-## Suporte
-
-Para suporte, entre em contato com a equipe de desenvolvimento ou crie uma issue no repositório. 
+MIT License. [LICENSE](LICENSE)
