@@ -1,0 +1,218 @@
+[
+    {
+        "country_code": "BR",
+        "ibge_id": 11,
+        "code": "RO",
+        "name": "Rondônia",
+        "lat": -10.83,
+        "lng": -63.34
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 12,
+        "code": "AC",
+        "name": "Acre",
+        "lat": -8.77,
+        "lng": -70.55
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 13,
+        "code": "AM",
+        "name": "Amazonas",
+        "lat": -3.47,
+        "lng": -65.1
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 14,
+        "code": "RR",
+        "name": "Roraima",
+        "lat": 1.99,
+        "lng": -61.33
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 15,
+        "code": "PA",
+        "name": "Pará",
+        "lat": -3.79,
+        "lng": -52.48
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 16,
+        "code": "AP",
+        "name": "Amapá",
+        "lat": 1.41,
+        "lng": -51.77
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 17,
+        "code": "TO",
+        "name": "Tocantins",
+        "lat": -9.46,
+        "lng": -48.26
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 21,
+        "code": "MA",
+        "name": "Maranhão",
+        "lat": -5.42,
+        "lng": -45.44
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 22,
+        "code": "PI",
+        "name": "Piauí",
+        "lat": -6.6,
+        "lng": -42.28
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 23,
+        "code": "CE",
+        "name": "Ceará",
+        "lat": -5.2,
+        "lng": -39.53
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 24,
+        "code": "RN",
+        "name": "Rio Grande do Norte",
+        "lat": -5.81,
+        "lng": -36.59
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 25,
+        "code": "PB",
+        "name": "Paraíba",
+        "lat": -7.28,
+        "lng": -36.72
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 26,
+        "code": "PE",
+        "name": "Pernambuco",
+        "lat": -8.38,
+        "lng": -37.86
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 27,
+        "code": "AL",
+        "name": "Alagoas",
+        "lat": -9.62,
+        "lng": -36.82
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 28,
+        "code": "SE",
+        "name": "Sergipe",
+        "lat": -10.57,
+        "lng": -37.45
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 29,
+        "code": "BA",
+        "name": "Bahia",
+        "lat": -13.29,
+        "lng": -41.71
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 31,
+        "code": "MG",
+        "name": "Minas Gerais",
+        "lat": -18.1,
+        "lng": -44.38
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 32,
+        "code": "ES",
+        "name": "Espírito Santo",
+        "lat": -19.19,
+        "lng": -40.34
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 33,
+        "code": "RJ",
+        "name": "Rio de Janeiro",
+        "lat": -22.25,
+        "lng": -42.66
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 35,
+        "code": "SP",
+        "name": "São Paulo",
+        "lat": -22.19,
+        "lng": -48.79
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 41,
+        "code": "PR",
+        "name": "Paraná",
+        "lat": -24.89,
+        "lng": -51.55
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 42,
+        "code": "SC",
+        "name": "Santa Catarina",
+        "lat": -27.45,
+        "lng": -50.95
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 43,
+        "code": "RS",
+        "name": "Rio Grande do Sul",
+        "lat": -30.17,
+        "lng": -53.5
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 50,
+        "code": "MS",
+        "name": "Mato Grosso do Sul",
+        "lat": -20.51,
+        "lng": -54.54
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 51,
+        "code": "MT",
+        "name": "Mato Grosso",
+        "lat": -12.64,
+        "lng": -55.42
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 52,
+        "code": "GO",
+        "name": "Goiás",
+        "lat": -15.98,
+        "lng": -49.86
+    },
+    {
+        "country_code": "BR",
+        "ibge_id": 53,
+        "code": "DF",
+        "name": "Distrito Federal",
+        "lat": -15.83,
+        "lng": -47.86
+    }
+]

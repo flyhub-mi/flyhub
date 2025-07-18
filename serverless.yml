@@ -1,0 +1,130 @@
+service: laravel
+
+provider:
+    name: aws
+    region: sa-east-1
+    stage: production
+    runtime: php-81
+    environment:
+        APP_ENV: 'production'
+        SQS_QUEUE: !Ref AlertQueue
+        APP_NAME: 'FlyHub'
+        APP_KEY: '${env:APP_KEY}'
+        APP_DEBUG: 'true'
+        APP_URL: 'https://flyhub.com.br'
+        LOG_CHANNEL: 'bugsnag'
+        DB_CONNECTION: 'mysql'
+        DB_HOST: 'flyhub-database.chrs3nzwc63p.sa-east-1.rds.amazonaws.com'
+        DB_PORT: '3306'
+        DB_DATABASE: 'flyhub'
+        DB_USERNAME: 'admin'
+        DB_PASSWORD: '${env:DB_PASSWORD}'
+        BROADCAST_DRIVER: 'log'
+        CACHE_DRIVER: 'array'
+        COMPOSER_AUTH: '{"github-oauth":{"github.com":"f3de328fea4839a0789fc78def0770b5ac3f7718"}}'
+        QUEUE_CONNECTION: 'sqs'
+        SESSION_DRIVER: 'array'
+        SESSION_LIFETIME: '120'
+        REDIS_HOST: '127.0.0.1'
+        REDIS_PASSWORD: 'null'
+        REDIS_PORT: '6379'
+        AWS_BUCKET: 's3.flyhub.com.br'
+        AWS_CDN_BUCKET: 'cdn.flyhub.com.br'
+        AWS_CDN_DEFAULT_REGION: 'us-east-1'
+        AWS_CDN_URL: '//cdn.flyhub.com.br'
+        PUSHER_APP_ID: ''
+        PUSHER_APP_KEY: ''
+        PUSHER_APP_SECRET: ''
+        PUSHER_APP_CLUSTER: 'mt1'
+        MIX_PUSHER_APP_KEY: '"${PUSHER_APP_KEY}"'
+        MIX_PUSHER_APP_CLUSTER: '"${PUSHER_APP_CLUSTER}"'
+        MELI_CLIENT_ID: '${env:MELI_CLIENT_ID}'
+        MELI_CLIENT_SECRET_KEY: '${env:MELI_CLIENT_SECRET_KEY}'
+        MELI_ENVIRONMENT: 'test'
+        SWAGGER_VERSION: '2.0'
+        BUGSNAG_API_KEY: '${env:BUGSNAG_API_KEY}'
+        SQS_PREFIX: 'https://sqs.sa-east-1.amazonaws.com/383047348414'
+        SQS_REGION: 'sa-east-1'
+        FILESYSTEM_DRIVER: 's3'
+        FILESYSTEM_DRIVER_PUBLIC: 'cdn'
+        ASSET_URL: '//cdn.flyhub.com.br'
+        MIX_ASSET_URL: '//cdn.flyhub.com.br'
+        VIEW_COMPILED_PATH: '/tmp/storage/framework/views'
+    iamRoleStatements:
+        - Effect: Allow
+          Action: [sqs:SendMessage, sqs:DeleteMessage]
+          Resource: !GetAtt AlertQueue.Arn
+
+functions:
+    worker:
+        handler: worker.php
+        layers:
+            - ${bref:layer.php-81}
+        events:
+            - sqs:
+                  arn: !GetAtt AlertQueue.Arn
+                  batchSize: 1
+
+resources:
+    Resources:
+        AlertQueue:
+            Type: AWS::SQS::Queue
+            Properties:
+                RedrivePolicy:
+                    # jobs will be retried up to 3 times
+                    maxReceiveCount: 1
+                    # Failed jobs (after the retries) will be moved to the other queue for storage
+                    deadLetterTargetArn: !GetAtt DeadLetterQueue.Arn
+
+        # Failed jobs will go into that SQS queue to be stored, until a developer looks at these errors
+        DeadLetterQueue:
+            Type: AWS::SQS::Queue
+            Properties:
+                MessageRetentionPeriod: 1209600
+
+package:
+    exclude:
+        - .docker/**
+        - .ebextensions/**
+        - .idea/**
+        - .git/**
+        - .elasticbeanstalk/**
+        - .platform/**
+        - .serverless/**
+        - docs/**
+        - node_modules/**
+        - public/**
+        - resources/assets/**
+        - resources/data/**
+        - resources/js/**
+        - resources/sass/**
+        - resources/vendor/**
+        - storage/**/**
+        - tests/**
+        - .env
+        - .phpstorm.meta.php
+        - _ide_helper.php
+        - yarn.lock
+        - vendor/**/.git/**
+        - vendor/**/.github/**
+        - vendor/**/dev-scripts/**
+        - vendor/**/tests/**
+        - vendor/**/.coveralls.yml
+        - vendor/**/.editorconfig
+        - vendor/**/.gitattributes
+        - vendor/**/.gitignore
+        - vendor/**/.phplint.yml
+        - vendor/**/*.md
+        - vendor/**/LICENSE
+        - vendor/**/phpcs.xml
+        - vendor/**/phpunit.*
+        - vendor/**/ci/**
+        - vendor/**/demo/**
+        - vendor/**/docs/**
+    include:
+        - public/index.php
+        - storage/oauth-private.key
+        - storage/oauth-public.key
+
+plugins:
+    - ./vendor/bref/bref

@@ -1,0 +1,113 @@
+{
+    "name": "flyhub/app",
+    "type": "flyhub",
+    "description": "flyhub",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/jeancx/dsc-mercado-livre"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/jeancx/lodash-php"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "adbario/php-dot-notation": "^2.2",
+        "automattic/woocommerce": "^3.0",
+        "aws/aws-sdk-php": "^3.158",
+        "barryvdh/laravel-snappy": "^1.0.0",
+        "bref/bref": "^2.0",
+        "bref/laravel-bridge": "^2.1",
+        "bugsnag/bugsnag-laravel": "^2.0",
+        "darkaonline/l5-swagger": "^8.0.4",
+        "doctrine/dbal": "^3.0",
+        "gmostafa/php-graphql-client": "^1.13",
+        "guzzlehttp/guzzle": "^7.2",
+        "jeancx/dsc-mercado-livre": "dev-master",
+        "jeancx/lodash-php": "dev-master",
+        "kalnoy/nestedset": "^6.0.1",
+        "laracasts/flash": "^3.2.1",
+        "laravel/framework": "^10.10",
+        "laravel/passport": "^11.0",
+        "laravel/tinker": "^2.8",
+        "laravel/ui": "^4.2.2",
+        "league/flysystem-aws-s3-v3": "^3.0.11",
+        "maatwebsite/excel": "^3.1",
+        "predis/predis": "^1.1",
+        "spatie/laravel-enum": "^3.0.1",
+        "spatie/laravel-html": "^3.2",
+        "spatie/laravel-permission": "^5.5.0",
+        "stancl/jobpipeline": "^1.6",
+        "stancl/tenancy": "^3.5",
+        "yajra/laravel-datatables-buttons": "^10.0",
+        "yajra/laravel-datatables-html": "^10.0",
+        "yajra/laravel-datatables-oracle": "~10.3.1",
+        "zircote/swagger-php": "^4.2.11"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.13",
+        "fakerphp/faker": "^1.9.1",
+        "filp/whoops": "^2.0",
+        "laravel/dusk": "^7.7",
+        "laravel/sail": "^1.22",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^7.0",
+        "php-vcr/php-vcr": "^1.6",
+        "phpunit/phpunit": "^10.1",
+        "spatie/laravel-ignition": "^2.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+                "barryvdh/laravel-ide-helper"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/",
+            "Database\\Seeders\\Tenant\\": "database/seeders/tenant",
+            "Database\\Traits\\": "database/traits/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php -d memory_limit=-1 artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:meta"
+        ],
+        "clean": [
+            "@php -d artisan clear-compiled && composer -d dump-autoload  && @php -d artisan optimize"
+        ]
+    }
+}

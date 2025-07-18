@@ -1,0 +1,37 @@
+{
+    "name": "FlyHub",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/var/www/html",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "php.validate.executablePath": "/usr/bin/php",
+                "editor.tabSize": 4
+            },
+            "extensions": [
+                "EditorConfig.EditorConfig",
+                "IronGeek.vscode-env",
+                "rifi2k.format-html-in-php",
+                "ecmel.vscode-html-css",
+                "shufo.vscode-blade-formatter",
+                "onecentlin.laravel-blade",
+                "xdebug.php-debug",
+                "neilbrayfield.php-docblocker",
+                "bmewburn.vscode-intelephense-client",
+                "zobo.php-intellisense",
+                "kokororin.vscode-phpfmt",
+                "emallin.phpunit",
+                "esbenp.prettier-vscode",
+                "foxundermoon.shell-format",
+                "richie5um2.vscode-sort-json",
+                "redhat.vscode-xml",
+                "ctf0.php-namespace-resolver",
+                "redhat.vscode-yaml",
+                "simonsiefke.prettier-vscode"
+            ]
+        }
+    },
+    "remoteUser": "flyhub"
+}

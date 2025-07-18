@@ -1,0 +1,98 @@
+version: "3"
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                WWWGROUP: "${WWWGROUP:-1000}"
+        container_name: app
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        ports:
+            - "80:80"
+        environment:
+            WWWUSER: "${WWWUSER:-1000}"
+            LARAVEL_FLYHUB: 1
+            XDEBUG_MODE: "${FLYHUB_XDEBUG_MODE:-off}"
+            XDEBUG_CONFIG: "${FLYHUB_XDEBUG_CONFIG:-client_host=host.docker.internal}"
+        volumes:
+            - "..:/var/www/html"
+        networks:
+            - flyhub
+        depends_on:
+            - mysql
+            - memcached
+            - redis
+            - mailhog
+
+    mysql:
+        image: "mysql/mysql-server:8.0"
+        container_name: mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: "${DB_PASSWORD:-password}"
+            MYSQL_ROOT_HOST: "%"
+            MYSQL_DATABASE: "${DB_DATABASE:-flyhub}"
+            MYSQL_USER: "${DB_USERNAME:-flyhub}"
+            MYSQL_PASSWORD: "${DB_PASSWORD:-password}"
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+        volumes:
+            - "mysql-data:/var/lib/mysql"
+        ports:
+            - "${FORWARD_DB_PORT:-3306}:3306"
+        networks:
+            - flyhub
+        healthcheck:
+            test: [ "CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}" ]
+            retries: 3
+            timeout: 5s
+
+    memcached:
+        image: "memcached:alpine"
+        container_name: memcached
+        ports:
+            - "${FORWARD_MEMCACHED_PORT:-11211}:11211"
+        networks:
+            - flyhub
+
+    redis:
+        image: "redis:alpine"
+        container_name: redis
+        ports:
+            - "${FORWARD_REDIS_PORT:-6379}:6379"
+        volumes:
+            - "redis-data:/data"
+        networks:
+            - flyhub
+        healthcheck:
+            test: [ "CMD", "redis-cli", "ping" ]
+
+    mailhog:
+        image: "mailhog/mailhog:latest"
+        container_name: mailhog
+        ports:
+            - "${FORWARD_MAILHOG_PORT:-1025}:1025"
+            - "${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025"
+        networks:
+            - flyhub
+
+    selenium:
+        image: "selenium/standalone-chrome"
+        container_name: selenium
+        ports:
+            - "4444:4444"
+            - "5959:5959"
+        volumes:
+            - "/dev/shm:/dev/shm"
+        networks:
+            - flyhub
+
+networks:
+    flyhub:
+        driver: bridge
+
+volumes:
+    mysql-data:
+        driver: local
+    redis-data:
+        driver: local

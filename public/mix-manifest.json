@@ -1,0 +1,8 @@
+{
+    "/js/auth.js": "/js/auth.js",
+    "/js/main.js": "/js/main.js",
+    "/js/tenant/app.js": "/js/tenant/app.js",
+    "/css/tenant/app.css": "/css/tenant/app.css",
+    "/css/auth.css": "/css/auth.css",
+    "/css/style.css": "/css/style.css"
+}

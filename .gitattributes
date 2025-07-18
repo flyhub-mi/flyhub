@@ -1,0 +1,15 @@
+Dockerfile eol=lf
+*.yml eol=lf
+*.xml eol=lf
+*.json eol=lf
+*.ini eol=lf
+*.conf eol=lf
+*.sh eol=lf
+*.php eol=lf
+*.js eol=lf
+*.jsx eol=lf
+*.css eol=lf
+*.scss eol=lf
+artisan eol=lf
+#DotFiles
+.* eol=lf

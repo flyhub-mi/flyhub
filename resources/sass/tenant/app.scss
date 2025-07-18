@@ -1,0 +1,49 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
+
+// Variables
+@import '../variables';
+
+// Plugins
+@import '~overlayscrollbars/css/OverlayScrollbars.css';
+@import '~icheck-bootstrap/icheck-bootstrap.css';
+@import '~toastr/toastr';
+@import '~sweetalert2/dist/sweetalert2.css';
+
+// AdminLTE
+@import '../../vendor/adminlte.css';
+
+// Layout
+form {
+    width: 100%;
+}
+
+.nav-icon {
+    color: grey;
+}
+
+[class*='sidebar-light-'] .nav-sidebar > .nav-item > .nav-treeview {
+    background: rgba(0, 0, 255, 0.03);
+}
+
+.sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: #84e0ee;
+    color: #000000;
+}
+
+footer .brand-image {
+    height: 24px;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar-mini-md .content-wrapper,
+    .sidebar-mini-md .content-wrapper:before,
+    .sidebar-mini-md .main-footer,
+    .sidebar-mini-md .main-footer:before,
+    .sidebar-mini-md .main-header,
+    .sidebar-mini-md .main-header:before {
+        margin-left: 0;
+    }
+}

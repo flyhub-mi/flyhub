@@ -1,0 +1,35 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.site-header a {
+    color: #999;
+    transition: ease-in-out color 0.15s;
+}
+
+.site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.brand-image {
+    height: 33px;
+}
+
+.login,
+.bg-image {
+    min-height: 100vh;
+}
+
+.bg-image {
+    background-image: url('/images/background-login.jpg');
+    background-size: cover;
+    background-position: center center;
+}
