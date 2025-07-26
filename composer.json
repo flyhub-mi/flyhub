@@ -59,13 +59,17 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "php-vcr/php-vcr": "^1.6",
-        "phpunit/phpunit": "^10.1",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
         "spatie/laravel-ignition": "^2.0"
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "extra": {
         "laravel": {
@@ -108,6 +112,15 @@
         ],
         "clean": [
             "@php -d artisan clear-compiled && composer -d dump-autoload  && @php -d artisan optimize"
+        ],
+        "test": [
+            "./vendor/bin/pest"
+        ],
+        "test:coverage": [
+            "./vendor/bin/pest --coverage"
+        ],
+        "test:parallel": [
+            "./vendor/bin/pest --parallel"
         ]
     }
 }

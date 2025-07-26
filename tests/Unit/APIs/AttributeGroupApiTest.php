@@ -1,83 +1,36 @@
 <?php
 
-namespace Tests\Unit\APIs;
-
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Tests\TestCase;
 use Tests\ApiTestTrait;
 use App\Models\Tenant\AttributeGroup;
+use ApiTestTrait, WithoutMiddleware, DatabaseTransactions;
 
-class AttributeGroupApiTest extends TestCase
-{
-    use ApiTestTrait, WithoutMiddleware, DatabaseTransactions;
+uses(Tests\TestCase::class);
 
-    /**
-     * @test
-     */
-    public function test_create_attribute_group()
-    {
-        $attributeGroup = factory(AttributeGroup::class)->make()->toArray();
-
-        $this->response = $this->json(
-            'POST',
-            '/api/attribute-groups',
-            $attributeGroup
-        );
-
-        $this->assertApiResponse($attributeGroup);
+test('create_attribute_group', function () {
+    $attributeGroup = factory(AttributeGroup::class)->make()->toArray();
+    $this->response = $this->json( 'POST', '/api/attribute-groups', $attributeGroup );
+    $this->assertApiResponse($attributeGroup);
     }
 
-    /**
-     * @test
-     */
-    public function test_read_attribute_group()
-    {
-        $attributeGroup = factory(AttributeGroup::class)->create();
-
-        $this->response = $this->json(
-            'GET',
-            '/api/attribute-groups/' . $attributeGroup->id
-        );
-
-        $this->assertApiResponse($attributeGroup->toArray());
+test('read_attribute_group', function () {
+    $attributeGroup = factory(AttributeGroup::class)->create();
+    $this->response = $this->json( 'GET', '/api/attribute-groups/' . $attributeGroup->id );
+    $this->assertApiResponse($attributeGroup->toArray());
     }
 
-    /**
-     * @test
-     */
-    public function test_update_attribute_group()
-    {
-        $attributeGroup = factory(AttributeGroup::class)->create();
-        $editedAttributeGroup = factory(AttributeGroup::class)->make()->toArray();
-
-        $this->response = $this->json(
-            'PUT',
-            '/api/attribute-groups/' . $attributeGroup->id,
-            $editedAttributeGroup
-        );
-
-        $this->assertApiResponse($editedAttributeGroup);
+test('update_attribute_group', function () {
+    $attributeGroup = factory(AttributeGroup::class)->create();
+    $editedAttributeGroup = factory(AttributeGroup::class)->make()->toArray();
+    $this->response = $this->json( 'PUT', '/api/attribute-groups/' . $attributeGroup->id, $editedAttributeGroup );
+    $this->assertApiResponse($editedAttributeGroup);
     }
 
-    /**
-     * @test
-     */
-    public function test_delete_attribute_group()
-    {
-        $attributeGroup = factory(AttributeGroup::class)->create();
-
-        $this->response = $this->json(
-            'DELETE',
-            '/api/attribute-groups/' . $attributeGroup->id
-        );
-
-        $this->assertApiSuccess();
-        $this->response = $this->json(
-            'GET',
-            '/api/attribute-groups/' . $attributeGroup->id
-        );
-
-        $this->response->assertStatus(404);
+test('delete_attribute_group', function () {
+    $attributeGroup = factory(AttributeGroup::class)->create();
+    $this->response = $this->json( 'DELETE', '/api/attribute-groups/' . $attributeGroup->id );
+    $this->assertApiSuccess();
+    $this->response = $this->json( 'GET', '/api/attribute-groups/' . $attributeGroup->id );
+    $this->response->assertStatus(404);
     }
-}

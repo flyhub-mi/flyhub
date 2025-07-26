@@ -1,162 +1,39 @@
 <?php
 
-namespace Tests\Unit\Repositories;
-
-use Tests\TestCase;
 use Tests\ApiTestTrait;
 use App\Repositories\ProductRepository;
 use App\Models\Tenant\Product;
 use App\Models\Tenant\Channel;
+use ApiTestTrait;
 
-class ProductRepositoryTest extends TestCase
-{
-    use ApiTestTrait;
+uses(Tests\TestCase::class);
 
-    /** @var ProductRepository */
-    protected $productRepo;
-
-    /** @var array */
-    protected $productInput;
-
-    public function setUp(): void
-    {
-        parent::setUp();
-
-        $channel = Channel::factory()->make();
-
-        $this->productInput = [
-            'remote_id' => '35052',
-            'type' => 'simple',
-            'sku' => '210389654692',
-            'name' => 'Tinta Para Piscina Azul Pu Kit Maza 4,5L',
-            'price' => 462.38,
-            'gross_weight' => '7',
-            'status' => '1',
-            'description' => 'Tinta Para Piscina Kit Pu Cor Azul Piscina 4,5lts Maza\r\n\r\n- Embalagem: Kit com 01 Gal\u00e3o de tinta PU na cor Azul Piscina + 01 catalizador + 01 diluente\r\n\r\nTinta para Piscinas \u00e9 um esmalte poliuretano bi componente formulado para pintura de piscinas de concreto e fibra de vidro.\r\n\r\nTem um alt\u00edssimo grau de ader\u00eancia e resist\u00eancia a a\u00e7\u00e3o dos raios e ao tratamento qu\u00edmico usados em piscinas.\r\n\r\nEla \u00e9 imperme\u00e1vel e f\u00e1cil de aplicar.\r\n- Super Aderente\r\n- Ultra Resistente\r\n- Resistente ao Desbotamento\r\n- Rendimento: at\u00e9 40 m2 por dem\u00e3o\r\n- Secagem: Ao toque 2 horas. Entre dem\u00e3os 10 a 24 horas. Final 72 horas\r\n- Aplica\u00e7\u00e3o: Rolo de l\u00e3 para ep\u00f3xi, trincha, pincel ou pistola.\r\n- Dilui\u00e7\u00e3o (com diluente Maza PU): Pincel ou Rolo: Piscinas Cimentadas: de 10 a 20% / Piscinas de Fibra: 10%Pistola: Piscinas Cimentadas: de 40 a 60% / Piscinas de Fibra: 20%',
-            'thumbnail' => 'https://satintas.com.br/media/catalog/product/t/i/tinta-para-piscina-azul-pu-kit-maza-4-5-l.jpg',
-            'channel_product_attributes' => [
-                ['key' => 'tamanho_tinta', 'value' => '3192'],
-                [
-                    'key' => 'description',
-                    'value' => 'Tinta Para Piscina Kit Pu Cor Azul Piscina 4,5lts Maza\\r\\n\\r\\n- Embalagem: Kit com 01 Gal\\u00e3o de tinta PU na cor Azul Piscina + 01 catalizador + 01 diluente\\r\\n\\r\\nTinta para Piscinas \\u00e9 um esmalte poliuretano bi componente formulado para pintura de piscinas de concreto e fibra de vidro.\\r\\n\\r\\nTem um alt\\u00edssimo grau de ader\\u00eancia e resist\\u00eancia a a\\u00e7\\u00e3o dos raios e ao tratamento qu\\u00edmico usados em piscinas.\\r\\n\\r\\nEla \\u00e9 imperme\\u00e1vel e f\\u00e1cil de aplicar.\\r\\n- Super Aderente\\r\\n- Ultra Resistente\\r\\n- Resistente ao Desbotamento\\r\\n- Rendimento: at\\u00e9 40 m2 por dem\\u00e3o\\r\\n- Secagem: Ao toque 2 horas. Entre dem\\u00e3os 10 a 24 horas. Final 72 horas\\r\\n- Aplica\\u00e7\\u00e3o: Rolo de l\\u00e3 para ep\\u00f3xi, trincha, pincel ou pistola.\\r\\n- Dilui\\u00e7\\u00e3o (com diluente Maza PU): Pincel ou Rolo: Piscinas Cimentadas: de 10 a 20% / Piscinas de Fibra: 10%Pistola: Piscinas Cimentadas: de 40 a 60% / Piscinas de Fibra: 20%'
-                ],
-                ['key' => 'image', 'value' => '/t/i/tinta-para-piscina-azul-pu-kit-maza-4-5-l.jpg'],
-                ['key' => 'url_key', 'value' => 'tinta-para-piscina-azul-pu-kit-maza-4-5-l'],
-                ['key' => 'gift_message_available', 'value' => '2'],
-                [
-                    'key' => 'short_description',
-                    'value' => 'Tinta para Piscinas \\u00e9 um esmalte poliuretano bi componente formulado para pintura de piscinas de concreto e fibra de vidro.'
-                ],
-                ['key' => 'small_image', 'value' => '/t/i/tinta-para-piscina-azul-pu-kit-maza-4-5-l.jpg'],
-                ['key' => 'meta_title', 'value' => 'Tinta Para Piscina Azul Pu Kit Maza 4,5L'],
-                ['key' => 'options_container', 'value' => 'container2'],
-                ['key' => 'volume_height', 'value' => '30'],
-                ['key' => 'modelo_anymarket', 'value' => 'Tintas'],
-                ['key' => 'familia', 'value' => '3172'],
-                ['key' => 'aplicacao', 'value' => '3182,3183,3184'],
-                ['key' => 'thumbnail', 'value' => '/t/i/tinta-para-piscina-azul-pu-kit-maza-4-5-l.jpg'],
-                ['key' => 'meta_keyword', 'value' => 'Tinta Para Piscina Azul Pu Kit Maza 4,5L'],
-                ['key' => 'volume_width', 'value' => '30'],
-                ['key' => 'calculo_anymarket', 'value' => '3128'],
-                ['key' => 'tonalidade', 'value' => '3151'],
-                ['key' => 'swatch_image', 'value' => '/t/i/tinta-para-piscina-azul-pu-kit-maza-4-5-l.jpg'],
-                [
-                    'key' => 'meta_description',
-                    'value' => 'Tinta para Piscinas \\u00e9 um esmalte poliuretano bi componente formulado para pintura de piscinas de concreto e fibra de vidro.'
-                ],
-                ['key' => 'volume_length', 'value' => '30'],
-                ['key' => 'garantiaanymarket', 'value' => 'Garantia com Fabricante'],
-                ['key' => 'cor', 'value' => '21'],
-                ['key' => 'lead_time', 'value' => '0'],
-                ['key' => 'fragile', 'value' => '0'],
-                ['key' => 'integra_anymarket', 'value' => '1'],
-                ['key' => 'msrp_display_actual_price_type', 'value' => '0'],
-                ['key' => 'markupanymarket', 'value' => '1'],
-                ['key' => 'tax_class_id', 'value' => '0'],
-                ['key' => 'acabamento', 'value' => '390'],
-                ['key' => 'antibacteria', 'value' => '1'],
-                ['key' => 'origem_anymarket', 'value' => '3131'],
-                ['key' => 'antimofo', 'value' => '1'],
-                ['key' => 'tempogarantiaanymarket', 'value' => '0'],
-                ['key' => 'category_ids', 'value' => '42,112,135'],
-                ['key' => 'base', 'value' => '388'],
-                ['key' => 'brand', 'value' => '3122'],
-                ['key' => 'categoria', 'value' => '3157'],
-                ['key' => 'exp_sep_simp_prod', 'value' => '0'],
-                ['key' => 'required_options', 'value' => '0'],
-                ['key' => 'has_options', 'value' => '0'],
-                ['key' => 'country_of_manufacture', 'value' => 'BR'],
-                ['key' => 'uso', 'value' => '367,368'],
-                ['key' => 'genero_anymarket', 'value' => '3123'],
-                ['key' => 'cadastro_importacao', 'value' => '0'],
-                ['key' => 'secagem', 'value' => '364'],
-                ['key' => 'codigoncm', 'value' => '3208.10.10'],
-                ['key' => 'demao', 'value' => '361'],
-                ['key' => 'diluicao', 'value' => '386'],
-                ['key' => 'featured', 'value' => '0'],
-                ['key' => 'fungicida', 'value' => '1'],
-                ['key' => 'lavavel', 'value' => '1'],
-                ['key' => 'limpeza', 'value' => '1'],
-                ['key' => 'rendimento', 'value' => '375'],
-                ['key' => 'odor', 'value' => '382']
-            ],
-            'variations' => [],
-            'product_images' => [[
-                'path' => 'https://satintas.com.br/media/catalog/product/t/i/tinta-para-piscina-azul-pu-kit-maza-4-5-l.jpg',
-                'channel_id' => $channel->id,
-            ],],
-        ];
-        $this->productRepo = \App::make(ProductRepository::class);
+test('create_product', function () {
+    $createdProduct = $this->productRepo->create($this->productInput);
+    $createdProduct = $createdProduct->toArray();
+    $this->assertArrayHasKey('id', $createdProduct);
+    $this->assertNotNull($createdProduct['id'], 'Created Product must have id specified');
+    $this->assertNotNull(Product::find($createdProduct['id']), 'Product with given id must be in DB');
     }
 
-    /**
-     * @test create
-     */
-    public function test_create_product()
-    {
-
-        $createdProduct = $this->productRepo->create($this->productInput);
-        $createdProduct = $createdProduct->toArray();
-
-        $this->assertArrayHasKey('id', $createdProduct);
-        $this->assertNotNull($createdProduct['id'], 'Created Product must have id specified');
-        $this->assertNotNull(Product::find($createdProduct['id']), 'Product with given id must be in DB');
+test('read_product', function () {
+    $product = $this->productRepo->create($this->productInput[0]);
+    $dbProduct = $this->productRepo->find($product->id);
+    $dbProduct = $dbProduct->toArray();
+    $this->assertModelData($product->toArray(), $dbProduct);
     }
 
-    /**
-     * @test read
-     */
-    public function test_read_product()
-    {
-        $product = $this->productRepo->create($this->productInput[0]);
-        $dbProduct = $this->productRepo->find($product->id);
-        $dbProduct = $dbProduct->toArray();
-
-        $this->assertModelData($product->toArray(), $dbProduct);
+test('update_product', function () {
+    $product = $this->productRepo->create($this->productInput[0]);
+    $updatedProduct = $this->productRepo->update([], $product->id);
+    $this->assertModelData([], $updatedProduct->toArray());
+    $dbProduct = $this->productRepo->find($product->id);
+    $this->assertModelData([], $dbProduct->toArray());
     }
 
-    /**
-     * @test update
-     */
-    public function test_update_product()
-    {
-        $product = $this->productRepo->create($this->productInput[0]);
-        $updatedProduct = $this->productRepo->update([], $product->id);
-        $this->assertModelData([], $updatedProduct->toArray());
-
-        $dbProduct = $this->productRepo->find($product->id);
-        $this->assertModelData([], $dbProduct->toArray());
+test('delete_product', function () {
+    $product = $this->productRepo->create($this->productInput[0]);
+    $resp = $this->productRepo->delete($product->id);
+    $this->assertTrue($resp);
+    $this->assertNull($this->productRepo->find($product->id), 'Product should not exist in DB');
     }
-
-    /**
-     * @test delete
-     */
-    public function test_delete_product()
-    {
-        $product = $this->productRepo->create($this->productInput[0]);
-        $resp = $this->productRepo->delete($product->id);
-
-        $this->assertTrue($resp);
-        $this->assertNull($this->productRepo->find($product->id), 'Product should not exist in DB');
-    }
-}

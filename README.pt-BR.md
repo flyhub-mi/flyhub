@@ -3,7 +3,7 @@
 Uma plataforma de integração multi-canal de e-commerce construída com Laravel.
 
 > 🇧🇷 **Leia em Português**: [README.pt-BR.md](README.pt-BR.md)
-> **📸 Screenshots**: [SCREENS.md](SCREENS.md)
+> **📸 Screenshots**: [SCREENS.md](docs/screenshots/README.md)
 
 ## Funcionalidades
 
@@ -23,9 +23,10 @@ Uma plataforma de integração multi-canal de e-commerce construída com Laravel
 
 ## Documentação
 
-- **📸 Screenshots**: [SCREENS.md](SCREENS.md) - Visão geral visual da interface da aplicação
-- **🔒 Segurança**: [SECURITY.md](SECURITY.md) - Diretrizes de segurança e melhores práticas
-- **🚀 Deploy**: [DEPLOYMENT.md](DEPLOYMENT.md) - Instruções de deploy
+- **📸 Screenshots**: [SCREENS.md](docs/screenshots/README.md) - Visão geral visual da interface da aplicação
+- **🧪 Testes**: [PEST_MIGRATION.md](docs/PEST_MIGRATION.md) - Guia do framework de testes Pest PHP
+- **🔒 Segurança**: [SECURITY.md](docs/SECURITY.md) - Diretrizes de segurança e melhores práticas
+- **🚀 Deploy**: [DEPLOYMENT.md](docs/DEPLOYMENT.md) - Instruções de deploy
 - **🇺🇸 English**: [README.md](README.md) - Documentação em inglês
 
 ## Início Rápido
@@ -272,14 +273,20 @@ php artisan tenants:run --tenants=sample-mart channel:test --channel=magento2
 ### Executar Testes
 ```bash
 # Executar todos os testes
-php artisan test
+composer test
 
 # Executar testes com cobertura
-php artisan test --coverage
+composer test:coverage
 
-# Executar suite específica de testes
-php artisan test --testsuite=Unit
-php artisan test --testsuite=Feature
+# Executar testes em paralelo
+composer test:parallel
+
+# Executar arquivos específicos de teste
+./vendor/bin/pest tests/Feature/
+./vendor/bin/pest tests/Unit/
+
+# Executar testes com filtro específico
+./vendor/bin/pest --filter="user"
 ```
 
 ### Testando com Dados de Demonstração

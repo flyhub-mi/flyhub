@@ -184,9 +184,9 @@ The application includes real-time capabilities:
 ## 📞 Support & Documentation
 
 For more information about the FlyHub platform:
-- **Documentation**: Check the main README.md file
-- **Security**: See SECURITY.md for security guidelines
-- **Deployment**: Refer to DEPLOYMENT.md for deployment instructions
+- **Documentation**: Check the main [README.md](../../README.md) file
+- **Security**: See [SECURITY.md](../SECURITY.md) for security guidelines
+- **Deployment**: Refer to [DEPLOYMENT.md](../DEPLOYMENT.md) for deployment instructions
 - **Demo**: Use the provided demo credentials to explore the application
 
 ---
