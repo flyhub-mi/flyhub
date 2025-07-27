@@ -1,39 +1,12 @@
 <?php
 
+namespace Tests\Unit\Integration\Mapping;
+
 use App\Integration\Mapping\ResourceMapper;
-use App\Integration\Mapping\DataMapper;
-use App\Models\Tenant\Channel;
+use Tests\TestCase;
+use stdClass;
 
-uses(Tests\TestCase::class);
-
-// Create a concrete test class to test the abstract ResourceMapper
-class TestResourceMapper extends ResourceMapper
-{
-    public function __construct($channel = null, $configs = null, $mapping = [])
-    {
-        parent::__construct($channel, $configs, $mapping);
-    }
-
-    public function getChannel()
-    {
-        return $this->channel;
-    }
-
-    public function getConfigs()
-    {
-        return $this->configs;
-    }
-
-    public function getMapping()
-    {
-        return $this->mapping;
-    }
-
-    public function testMapData($data, $to)
-    {
-        return $this->mapData($data, $to);
-    }
-}
+uses(TestCase::class);
 
 describe('ResourceMapper class', function () {
     describe('constructor', function () {

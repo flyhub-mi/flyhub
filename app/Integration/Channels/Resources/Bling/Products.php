@@ -6,6 +6,8 @@ use App\Integration\ChannelResource;
 use App\Integration\Channels\Bling\Api;
 use App\Integration\Channels\Bling\Mapping\ProductMapper;
 use App\Models\Tenant\Channel;
+use Exception;
+use Illuminate\Database\Eloquent\MassAssignmentException;
 
 class Products extends ChannelResource
 {
