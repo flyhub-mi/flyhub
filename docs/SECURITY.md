@@ -35,6 +35,11 @@ BUGSNAG_API_KEY=            # Bugsnag API key for error tracking
 STRIPE_KEY=                 # Stripe publishable key
 STRIPE_SECRET=              # Stripe secret key
 
+# Cloudflare Configuration (for tenant subdomain creation)
+CLOUDFLARE_TOKEN=           # Cloudflare API token
+CLOUDFLARE_ZONE_ID=         # Cloudflare zone ID
+CLOUDFLARE_SERVER_IP=       # Server IP address for DNS records
+
 # Email Configuration
 MAIL_USERNAME=              # SMTP username
 MAIL_PASSWORD=              # SMTP password

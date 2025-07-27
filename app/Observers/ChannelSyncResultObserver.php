@@ -12,7 +12,7 @@ class ChannelSyncResultObserver
      */
     public function updated(ChannelSyncResult $syncResult)
     {
-        if ($syncResult->wasChanged('current') && $syncResult->current >= $syncResult->total) {
+        if ($syncResult->wasChanged('processed') && $syncResult->processed >= $syncResult->total) {
             $syncResult->update(['status' => 'complete']);
         }
     }

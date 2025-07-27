@@ -31,12 +31,13 @@ class CreateTenantSubdomain implements ShouldQueue
     {
         $apiToken = env('CLOUDFLARE_TOKEN');
         $zoneId = env('CLOUDFLARE_ZONE_ID');
+        $serverIp = env('CLOUDFLARE_SERVER_IP');
 
         Http::withToken($apiToken)
             ->post('https://api.cloudflare.com/client/v4/zones/' . $zoneId . '/dns_records', [
                 "type" => "A",
                 "name" =>  $this->tenant->getTenantKey() . '.flyhub.com.br',
-                "content" => "54.88.38.41",
+                "content" => $serverIp,
                 "ttl" => 3600,
                 "priority" => 10,
                 "proxied" => true

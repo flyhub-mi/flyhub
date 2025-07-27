@@ -20,6 +20,7 @@ Uma plataforma de integração multi-canal de e-commerce construída com Laravel
 - Gerenciamento de pedidos
 - Controle de estoque
 - Design API-first
+- Criação automática de subdomínios via Cloudflare quando tenants são criados
 
 ## Documentação
 
@@ -107,6 +108,11 @@ AWS_SECRET_ACCESS_KEY=sua_chave_secreta_aws
 MELI_CLIENT_ID=seu_client_id_meli
 MELI_CLIENT_SECRET_KEY=sua_chave_secreta_meli
 
+# Configuração Cloudflare (para criação de subdomínios de tenants)
+CLOUDFLARE_TOKEN=seu_token_api_cloudflare
+CLOUDFLARE_ZONE_ID=seu_zone_id_cloudflare
+CLOUDFLARE_SERVER_IP=seu_ip_do_servidor
+
 # Outros serviços conforme necessário...
 ```
 
@@ -193,6 +199,48 @@ curl -X POST http://localhost:8000/api/login \
 php artisan tenants:run --tenants=demo-store queue:work
 php artisan tenants:run --tenants=test-shop sync --argument="type=receive" --argument="resource=products"
 ```
+
+## Integração Cloudflare de Subdomínios
+
+A aplicação cria automaticamente subdomínios para novos tenants usando a API DNS do Cloudflare. Quando um novo tenant é criado, um job em background é despachado para criar um registro DNS A apontando para seu servidor.
+
+### Como funciona
+
+1. **Criação do Tenant**: Quando um novo tenant é criado no sistema
+2. **Despacho do Job**: Um job `CreateTenantSubdomain` é automaticamente enfileirado
+3. **Criação do DNS**: O job cria um registro A no Cloudflare apontando `{tenant-id}.flyhub.com.br` para o IP do seu servidor
+4. **Configuração Automática**: O subdomínio fica disponível para o tenant
+
+### Configuração
+
+Para habilitar esta funcionalidade, configure as seguintes variáveis de ambiente:
+
+```env
+# Configuração Cloudflare
+CLOUDFLARE_TOKEN=seu_token_api_cloudflare      # Seu token API do Cloudflare
+CLOUDFLARE_ZONE_ID=seu_zone_id_cloudflare      # Seu Zone ID do Cloudflare
+CLOUDFLARE_SERVER_IP=seu_ip_do_servidor        # IP do seu servidor
+```
+
+### Obtendo Credenciais do Cloudflare
+
+1. **Token API**: 
+   - Vá para Cloudflare Dashboard → Meu Perfil → API Tokens
+   - Crie um novo token com permissões "Zone:Zone:Edit" e "Zone:DNS:Edit"
+   - Selecione sua zona de domínio
+
+2. **Zone ID**: 
+   - Vá para Cloudflare Dashboard → Selecione seu domínio
+   - O Zone ID é exibido na barra lateral direita
+
+3. **IP do Servidor**: 
+   - Use o IP público do seu servidor onde a aplicação está hospedada
+
+### Exemplo
+
+Quando um tenant com ID `minhaempresa` é criado, o sistema irá:
+- Criar registro DNS: `minhaempresa.flyhub.com.br` → `SEU_IP_DO_SERVIDOR`
+- O subdomínio ficará disponível para o tenant acessar sua instância
 
 ## Uso
 
