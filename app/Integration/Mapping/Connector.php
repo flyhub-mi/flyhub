@@ -14,12 +14,23 @@ class Connector
      */
     public static function buildResource($mapping, $columns, $wheres = [])
     {
+        $pkValue = $columns['pk'] ?? null;
+        $filteredColumns = $columns;
+
+        // Remove the primary key column
+        if ($pkValue && isset($filteredColumns[$pkValue])) {
+            unset($filteredColumns[$pkValue]);
+        }
+
+        // Remove the 'pk' key itself
+        unset($filteredColumns['pk']);
+
         return [
             'name' => $mapping['resource'],
             'pk' => $mapping['pk'],
             'generator' => $mapping['generator'] ?: '',
             'wheres' => $wheres,
-            'columns' => Utils::removeColumn($columns, $columns['pk']),
+            'columns' => $filteredColumns,
         ];
     }
 

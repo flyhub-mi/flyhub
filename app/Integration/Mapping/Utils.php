@@ -41,7 +41,7 @@ class Utils
      */
     public static function removeColumn($items,  $value, $key = 'name')
     {
-        return array_filter($items, fn ($item) => $item[$key] !== $value);
+        return array_filter($items, fn ($item) => get($item, $key, '') !== $value);
     }
 
     /**
