@@ -50,7 +50,7 @@ jobs:
         restore-keys: ${{ runner.os }}-php-
 
     - name: Install PHP dependencies
-      run: composer install
+      run: composer install --prefer-dist --optimize-autoloader
 
     - name: Install Node.js dependencies
       run: yarn install --frozen-lockfile
