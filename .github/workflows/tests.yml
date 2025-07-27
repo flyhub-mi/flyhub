@@ -87,7 +87,7 @@ jobs:
       run: php artisan passport:install --force
 
     - name: Build frontend assets
-      run: yarn build
+      run: yarn dev
 
     - name: Run Laravel tests
       run: |
@@ -151,7 +151,7 @@ jobs:
       run: yarn install --frozen-lockfile
 
     - name: Build frontend assets
-      run: yarn build
+      run: yarn dev
 
     - name: Run frontend tests (if available)
       run: |
