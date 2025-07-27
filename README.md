@@ -3,7 +3,7 @@
 A multi-channel e-commerce integration platform built with Laravel.
 
 > 🇧🇷 **Leia em Português**: [README.pt-BR.md](README.pt-BR.md)
-> **📸 Screenshots**: [SCREENS.md](docs/screenshots/README.md)
+> **📸 Screenshots**: [docs/screenshots/README.md](docs/screenshots/README.md)
 
 ## Features
 
@@ -24,7 +24,7 @@ A multi-channel e-commerce integration platform built with Laravel.
 
 ## Documentation
 
-- **📸 Screenshots**: [SCREENS.md](docs/screenshots/README.md) - Visual overview of the application interface
+- **📸 Screenshots**: [docs/screenshots/README.md](docs/screenshots/README.md) - Visual overview of the application interface
 - **🧪 Testing**: [PEST_MIGRATION.md](docs/PEST_MIGRATION.md) - Pest PHP testing framework guide
 - **🔒 Security**: [SECURITY.md](docs/SECURITY.md) - Security guidelines and best practices
 - **🚀 Deployment**: [DEPLOYMENT.md](docs/DEPLOYMENT.md) - Deployment instructions

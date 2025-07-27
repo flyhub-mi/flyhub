@@ -21,82 +21,84 @@ FlyHub is a powerful multi-channel e-commerce integration platform that enables 
 
 ## 📸 Screenshots Gallery
 
-### Dashboard & Analytics
-![Dashboard Overview](Screenshot%20From%202025-07-18%2017-09-32.png)
-*Main dashboard showing key metrics, recent orders, and platform integrations*
+> **Note**: These screenshots showcase the FlyHub application interface. The descriptions are based on the interface layout and functionality areas. For the most accurate representation of current features, please refer to the actual application.
 
-![Analytics Dashboard](Screenshot%20From%202025-07-18%2017-07-54.png)
-*Detailed analytics and performance metrics across all integrated platforms*
+### Authentication & Login
+![Tenant Login](Screenshot%20From%202025-07-18%2017-09-32.png)
+*Tenant login and authentication interface*
 
-### User Management & Authentication
-![User Management](Screenshot%20From%202025-07-18%2017-18-36.png)
-*User management interface with role-based access control*
+### Homepage & Dashboard
+![Main Homepage](Screenshot%20From%202025-07-18%2017-07-54.png)
+*Main homepage with navigation and welcome interface*
 
-![Role Management](Screenshot%20From%202025-07-18%2017-18-33.png)
-*Role and permission management system*
+![Main Dashboard](Screenshot%20From%202025-07-18%2017-11-30.png)
+*Main dashboard with key metrics and system overview*
 
-![User Profile](Screenshot%20From%202025-07-18%2017-18-31.png)
-*User profile and settings management*
-
-### Product Management
-![Product Catalog](Screenshot%20From%202025-07-18%2017-18-26.png)
-*Product catalog management with bulk operations*
-
-![Product Details](Screenshot%20From%202025-07-18%2017-18-23.png)
-*Detailed product information and marketplace synchronization*
-
-![Product Creation](Screenshot%20From%202025-07-18%2017-18-18.png)
-*Product creation and editing interface*
-
-### Order Management
-![Order Dashboard](Screenshot%20From%202025-07-18%2017-17-50.png)
-*Order management dashboard with status tracking*
-
-![Order Details](Screenshot%20From%202025-07-18%2017-17-45.png)
-*Detailed order information and processing*
-
-![Order Processing](Screenshot%20From%202025-07-18%2017-17-41.png)
-*Order processing and fulfillment workflow*
-
-### Platform Integrations
-![Integration Settings](Screenshot%20From%202025-07-18%2017-17-35.png)
-*Platform integration configuration and settings*
-
-![API Configuration](Screenshot%20From%202025-07-18%2017-17-25.png)
-*API configuration and authentication setup*
+### Shipments & Logistics
+![Shipments List](Screenshot%20From%202025-07-18%2017-11-48.png)
+*Shipments list and logistics management interface*
 
 ### Inventory Management
-![Inventory Overview](Screenshot%20From%202025-07-18%2017-12-19.png)
-*Inventory tracking and stock management across platforms*
+![Products Inventories](Screenshot%20From%202025-07-18%2017-17-35.png)
+*Products inventories and stock management interface*
 
-![Stock Management](Screenshot%20From%202025-07-18%2017-12-14.png)
-*Stock level monitoring and alerts*
+### Platform Integrations
+![Job Integration Sync Logs](Screenshot%20From%202025-07-18%2017-17-50.png)
+*Job integration synchronization logs and monitoring interface*
 
-![Inventory Sync](Screenshot%20From%202025-07-18%2017-12-09.png)
-*Inventory synchronization status and configuration*
+![API Tokens Management](Screenshot%20From%202025-07-18%2017-17-45.png)
+*API tokens and authentication management interface*
 
-### Reports & Analytics
-![Sales Reports](Screenshot%20From%202025-07-18%2017-12-04.png)
-*Sales performance reports and analytics*
+![Categories Mapping](Screenshot%20From%202025-07-18%2017-12-09.png)
+*Categories mapping and configuration interface*
 
-![Performance Metrics](Screenshot%20From%202025-07-18%2017-11-56.png)
-*Performance metrics and KPI tracking*
+![Channels](Screenshot%20From%202025-07-18%2017-12-19.png)
+*Channels and platform integration management interface*
 
-![Data Visualization](Screenshot%20From%202025-07-18%2017-11-52.png)
-*Data visualization and charting capabilities*
+### Order Management
+![Order Interface](Screenshot%20From%202025-07-18%2017-11-43.png)
+*Order management and details interface*
 
-### System Configuration
-![System Settings](Screenshot%20From%202025-07-18%2017-11-48.png)
-*System configuration and preferences*
+![Order List](Screenshot%20From%202025-07-18%2017-11-39.png)
+*Order list and management interface*
 
-![Notification Center](Screenshot%20From%202025-07-18%2017-11-43.png)
-*Notification center and alert management*
+### Product Management
+![Product Management Interface](Screenshot%20From%202025-07-18%2017-18-26.png)
+*Product catalog and management interface*
 
-![Help & Support](Screenshot%20From%202025-07-18%2017-11-39.png)
-*Help documentation and support interface*
+![Product Details View](Screenshot%20From%202025-07-18%2017-18-23.png)
+*Detailed product information and configuration interface*
 
-![System Status](Screenshot%20From%202025-07-18%2017-11-30.png)
-*System status and health monitoring*
+![Product Creation Form](Screenshot%20From%202025-07-18%2017-18-18.png)
+*Product creation and editing form interface*
+
+![Product Attribute Sets](Screenshot%20From%202025-07-18%2017-12-04.png)
+*Product attribute sets and configuration interface*
+
+![Product Data Tab](Screenshot%20From%202025-07-18%2017-11-56.png)
+*Product data tab and information interface*
+
+![Products List](Screenshot%20From%202025-07-18%2017-11-52.png)
+*Products list and catalog interface*
+
+![Product Attributes Tab](Screenshot%20From%202025-07-18%2017-18-31.png)
+*Product attributes tab and configuration interface*
+
+![Product Shipment Data Tab](Screenshot%20From%202025-07-18%2017-18-33.png)
+*Product shipment data tab and configuration interface*
+
+![Product Description Tab](Screenshot%20From%202025-07-18%2017-18-36.png)
+*Product description tab and content management interface*
+
+![Product Attribute Groups](Screenshot%20From%202025-07-18%2017-17-41.png)
+*Product attribute groups and categorization interface*
+
+### User Management & Authentication
+![Users List](Screenshot%20From%202025-07-18%2017-17-25.png)
+*Users list and management interface*
+
+![Customers List](Screenshot%20From%202025-07-18%2017-12-14.png)
+*Customers list and management interface*
 
 ## ✨ Features Demonstrated
 
@@ -188,6 +190,27 @@ For more information about the FlyHub platform:
 - **Security**: See [SECURITY.md](../SECURITY.md) for security guidelines
 - **Deployment**: Refer to [DEPLOYMENT.md](../DEPLOYMENT.md) for deployment instructions
 - **Demo**: Use the provided demo credentials to explore the application
+
+## 🔄 Updating Screenshots
+
+To keep the screenshots documentation accurate and up-to-date:
+
+1. **Capture new screenshots** of the actual application interface
+2. **Update the descriptions** to match the actual content shown
+3. **Organize by functionality** - group related screenshots together
+4. **Use descriptive names** - rename files to reflect their content
+5. **Maintain consistency** - use similar naming conventions and descriptions
+
+### Recommended Screenshot Organization
+
+- **Dashboard & Analytics**: Main dashboard, analytics, metrics
+- **User Management**: User lists, roles, permissions, profiles
+- **Product Management**: Product catalog, details, creation forms
+- **Order Management**: Order lists, details, processing
+- **Integrations**: Platform connections, API settings
+- **Inventory**: Stock management, synchronization
+- **Reports**: Sales reports, performance metrics
+- **System**: Configuration, notifications, help
 
 ---
 
