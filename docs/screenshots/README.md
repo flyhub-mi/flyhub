@@ -22,80 +22,80 @@ FlyHub is a powerful multi-channel e-commerce integration platform that enables 
 ## 📸 Screenshots Gallery
 
 ### Dashboard & Analytics
-![Dashboard Overview](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-09-32.png)
+![Dashboard Overview](Screenshot%20From%202025-07-18%2017-09-32.png)
 *Main dashboard showing key metrics, recent orders, and platform integrations*
 
-![Analytics Dashboard](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-07-54.png)
+![Analytics Dashboard](Screenshot%20From%202025-07-18%2017-07-54.png)
 *Detailed analytics and performance metrics across all integrated platforms*
 
 ### User Management & Authentication
-![User Management](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-18-36.png)
+![User Management](Screenshot%20From%202025-07-18%2017-18-36.png)
 *User management interface with role-based access control*
 
-![Role Management](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-18-33.png)
+![Role Management](Screenshot%20From%202025-07-18%2017-18-33.png)
 *Role and permission management system*
 
-![User Profile](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-18-31.png)
+![User Profile](Screenshot%20From%202025-07-18%2017-18-31.png)
 *User profile and settings management*
 
 ### Product Management
-![Product Catalog](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-18-26.png)
+![Product Catalog](Screenshot%20From%202025-07-18%2017-18-26.png)
 *Product catalog management with bulk operations*
 
-![Product Details](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-18-23.png)
+![Product Details](Screenshot%20From%202025-07-18%2017-18-23.png)
 *Detailed product information and marketplace synchronization*
 
-![Product Creation](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-18-18.png)
+![Product Creation](Screenshot%20From%202025-07-18%2017-18-18.png)
 *Product creation and editing interface*
 
 ### Order Management
-![Order Dashboard](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-17-50.png)
+![Order Dashboard](Screenshot%20From%202025-07-18%2017-17-50.png)
 *Order management dashboard with status tracking*
 
-![Order Details](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-17-45.png)
+![Order Details](Screenshot%20From%202025-07-18%2017-17-45.png)
 *Detailed order information and processing*
 
-![Order Processing](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-17-41.png)
+![Order Processing](Screenshot%20From%202025-07-18%2017-17-41.png)
 *Order processing and fulfillment workflow*
 
 ### Platform Integrations
-![Integration Settings](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-17-35.png)
+![Integration Settings](Screenshot%20From%202025-07-18%2017-17-35.png)
 *Platform integration configuration and settings*
 
-![API Configuration](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-17-25.png)
+![API Configuration](Screenshot%20From%202025-07-18%2017-17-25.png)
 *API configuration and authentication setup*
 
 ### Inventory Management
-![Inventory Overview](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-12-19.png)
+![Inventory Overview](Screenshot%20From%202025-07-18%2017-12-19.png)
 *Inventory tracking and stock management across platforms*
 
-![Stock Management](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-12-14.png)
+![Stock Management](Screenshot%20From%202025-07-18%2017-12-14.png)
 *Stock level monitoring and alerts*
 
-![Inventory Sync](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-12-09.png)
+![Inventory Sync](Screenshot%20From%202025-07-18%2017-12-09.png)
 *Inventory synchronization status and configuration*
 
 ### Reports & Analytics
-![Sales Reports](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-12-04.png)
+![Sales Reports](Screenshot%20From%202025-07-18%2017-12-04.png)
 *Sales performance reports and analytics*
 
-![Performance Metrics](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-11-56.png)
+![Performance Metrics](Screenshot%20From%202025-07-18%2017-11-56.png)
 *Performance metrics and KPI tracking*
 
-![Data Visualization](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-11-52.png)
+![Data Visualization](Screenshot%20From%202025-07-18%2017-11-52.png)
 *Data visualization and charting capabilities*
 
 ### System Configuration
-![System Settings](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-11-48.png)
+![System Settings](Screenshot%20From%202025-07-18%2017-11-48.png)
 *System configuration and preferences*
 
-![Notification Center](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-11-43.png)
+![Notification Center](Screenshot%20From%202025-07-18%2017-11-43.png)
 *Notification center and alert management*
 
-![Help & Support](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-11-39.png)
+![Help & Support](Screenshot%20From%202025-07-18%2017-11-39.png)
 *Help documentation and support interface*
 
-![System Status](resources/assets/screenshots/Screenshot%20From%202025-07-18%2017-11-30.png)
+![System Status](Screenshot%20From%202025-07-18%2017-11-30.png)
 *System status and health monitoring*
 
 ## ✨ Features Demonstrated

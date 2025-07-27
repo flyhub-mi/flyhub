@@ -28,6 +28,8 @@ Uma plataforma de integração multi-canal de e-commerce construída com Laravel
 - **🧪 Testes**: [PEST_MIGRATION.md](docs/PEST_MIGRATION.md) - Guia do framework de testes Pest PHP
 - **🔒 Segurança**: [SECURITY.md](docs/SECURITY.md) - Diretrizes de segurança e melhores práticas
 - **🚀 Deploy**: [DEPLOYMENT.md](docs/DEPLOYMENT.md) - Instruções de deploy
+- **🗺️ Sistema de Mapeamento**: [MAPPING.md](docs/MAPPING.md) - Sistema de mapeamento de dados para integrações de API
+- **📋 Exemplos de Mapeamento**: [MAPPING_EXAMPLES.md](docs/MAPPING_EXAMPLES.md) - Exemplos práticos de mapeamento para plataformas de e-commerce
 - **🇺🇸 English**: [README.md](README.md) - Documentação em inglês
 
 ## Início Rápido

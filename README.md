@@ -28,6 +28,8 @@ A multi-channel e-commerce integration platform built with Laravel.
 - **🧪 Testing**: [PEST_MIGRATION.md](docs/PEST_MIGRATION.md) - Pest PHP testing framework guide
 - **🔒 Security**: [SECURITY.md](docs/SECURITY.md) - Security guidelines and best practices
 - **🚀 Deployment**: [DEPLOYMENT.md](docs/DEPLOYMENT.md) - Deployment instructions
+- **🗺️ Mapping System**: [MAPPING.md](docs/MAPPING.md) - Data mapping system for API integrations
+- **📋 Mapping Examples**: [MAPPING_EXAMPLES.md](docs/MAPPING_EXAMPLES.md) - Practical mapping examples for e-commerce platforms
 - **🇧🇷 Portuguese**: [README.pt-BR.md](README.pt-BR.md) - Portuguese documentation
 
 ## Quick Start
